@@ -7,7 +7,25 @@ int num1 = int.Parse(Console.ReadLine());
 Console.WriteLine("Введите второе число: ");
 int num2 = int.Parse(Console.ReadLine());
 
-Console.WriteLine($"{num1} в степени {num2} = {Math.Pow(num1, num2)}");
+int count = 1;
+int expon = 1;
+
+while (count <= Math.Abs(num2))
+{
+    expon *= num1;
+    count++;
+}
+if (num1 != 0 && num2 > 0) Console.WriteLine($"{num1} в {num2} степени- {expon}");
+if (num1 == 0 && num2 != 0) Console.WriteLine($"{num1} в {num2} степени- 0 ");
+if (num1 != 0 && num2 == 0) Console.WriteLine($"{num1} в {num2} степени- 1 "); 
+if (num1 != 0 && num2 < 0) Console.WriteLine($"{num1} в {num2} степени- -(1 / {Math.Abs(expon)})");
+
+
+
+
+
+
+
 
 
 
